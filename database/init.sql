@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS cv_db;
+CREATE DATABASE IF NOT EXISTS diplomado_db;
 
-USE cv_db;
+USE diplomado_db;
 
 CREATE TABLE IF NOT EXISTS persona (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -15,14 +15,14 @@ CREATE TABLE IF NOT EXISTS formacion (
     titulo VARCHAR(255) NOT NULL,
     institucion VARCHAR(255) NOT NULL,
     anio VARCHAR(50) NOT NULL,
-    persona_id INT NOT NULL,
-    FOREIGN KEY (persona_id) REFERENCES persona(id) ON DELETE CASCADE
+    id INT NOT NULL,
+    FOREIGN KEY (id) REFERENCES persona(id) ON DELETE CASCADE
 );
 
 INSERT INTO persona (nombre, apellido, ciudad, foto) VALUES 
 ('Roberto', 'Garcia', 'Mexico City', 'https://via.placeholder.com/150');
 
-INSERT INTO formacion (titulo, institucion, anio, persona_id) VALUES 
+INSERT INTO formacion (titulo, institucion, anio, id) VALUES 
 ('Computer Systems Engineering', 'Technological University', '2020', 1),
 ('Master in Software Development', 'Institute of Technology', '2022', 1),
 ('Docker Specialization Course', 'Educational Platform', '2023', 1);

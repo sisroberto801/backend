@@ -9,7 +9,7 @@ const app = express();
 app.use(morgan('combined'));
 app.use(express.json());
 
-app.use('/api/cv', cvRoutes)
+app.use('/cv', cvRoutes)
 
 swaggerDocs(app, env.db_port);
 export default app;

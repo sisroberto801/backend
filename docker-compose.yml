@@ -6,10 +6,10 @@ services:
     container_name: mysql_cv
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: cv_db
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: diplomado_db
       MYSQL_USER: cv_user
-      MYSQL_PASSWORD: cv_password
+      MYSQL_PASSWORD: 12345
     ports:
       - "3306:3306"
     volumes:
@@ -23,7 +23,7 @@ services:
       retries: 10
 
   backend:
-    image: guarcia-backend:v1
+    image: olguin-backend:v1
     container_name: backend_cv
     restart: always
     build:
@@ -33,9 +33,9 @@ services:
       - "4000:4000"
     environment:
       DB_HOST: database
-      DB_DATABASE: cv_db
-      DB_USER: cv_user
-      DB_PASSWORD: cv_password
+      DB_DATABASE: diplomado_db
+      DB_USER: root
+      DB_PASSWORD: 12345
       DB_DIALECT: mysql
       DB_USE_SSL: "false"
       PORT: 4000
@@ -46,7 +46,7 @@ services:
       - cv_network
 
   frontend:
-    image: guarcia-frontend:v1
+    image: olguin-frontend:v1
     container_name: frontend_cv
     restart: always
     ports:
