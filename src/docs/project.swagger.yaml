@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: Documentación de la API para gestión de CV (Swagger + Express)
 paths:
-  /api/cv:
+  /cv:
     get:
       tags:
         - CV
