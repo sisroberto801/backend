@@ -63,8 +63,8 @@ DB_USE_SSL=false
 
 1. **Clonar el repositorio**
 ```bash
-git clone <repository-url>
-cd node-base-diplomado
+git clone https://github.com/sisroberto801/backend.git
+cd backend
 ```
 
 2. **Instalar dependencias**
