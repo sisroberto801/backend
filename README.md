@@ -50,13 +50,27 @@ Accede a la documentación interactiva en:
 ### Variables de Entorno
 ```env
 PORT=4000
+
 DB_PORT=3306
-DB_HOST=localhost
-DB_USER=root
+DB_HOST=database
+DB_USER=cv_user
 DB_PASSWORD=12345
 DB_DATABASE=diplomado_db
 DB_DIALECT=mysql
 DB_USE_SSL=false
+
+BCRYPT_SALT_ROUNDS=10
+
+JWT_SECRET=secret
+JWT_EXPIRES_SECOND=15*60
+```
+
+### Configuración para Docker
+
+Cuando no se ejecute desde docker-compose es requerido tener esto:
+```env
+DB_HOST=localhost
+DB_USER=root
 ```
 
 ## 🚀 Instalación y Ejecución

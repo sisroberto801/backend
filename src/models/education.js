@@ -29,7 +29,8 @@ export const Education = sequelize.define('formacion', {
     }
   },
 }, {
-  freezeTableName: true
+  freezeTableName: true,
+  timestamps: false
 });
 
 Person.hasMany(Education, { foreignKey: 'persona_id', as: 'formacion' });

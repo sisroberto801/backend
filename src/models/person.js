@@ -24,5 +24,6 @@ export const Person = sequelize.define('persona', {
     allowNull: false,
   },
 }, {
-  freezeTableName: true
+  freezeTableName: true,
+  timestamps: false
 });
